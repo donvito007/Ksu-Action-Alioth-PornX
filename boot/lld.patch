@@ -1,0 +1,22 @@
+diff --git a/dtc/dtc-lexer.lex b/dtc/dtc-lexer.lex
+index 5c6c3fd557d7..b3b7270300de 100644
+--- a/dtc/dtc-lexer.lex
++++ b/dtc/dtc-lexer.lex
+@@ -78,7 +78,7 @@ static YYLTYPE yylloc;
+ #ifndef YYLTYPE_IS_DECLARED
+ #define YYLTYPE_IS_DECLARED 1
+ typedef struct yyltype
+-{
++extern
+ int first_line;
+ int first_column;
+ int last_line;
+@@ -101,7 +101,7 @@ yylval = yylval_param;
+ }
+ 
+ /* Make sure yylloc is defined */
+-static YYLTYPE yylloc;
++YYLTYPE yylloc;
+ 
+ int
+ yylex (void)
